@@ -1,6 +1,9 @@
 package org.jojoldu.book.springboot.web;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.jojoldu.book.springboot.config.auth.LoginUser;
+import org.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import org.jojoldu.book.springboot.service.post.PostService;
 import org.jojoldu.book.springboot.web.dto.PostResponseDto;
 import org.springframework.stereotype.Controller;
@@ -15,8 +18,11 @@ public class IndexController {
     private final PostService postService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
