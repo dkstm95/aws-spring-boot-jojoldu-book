@@ -15,6 +15,7 @@ spring:
     properties:
       format_sql: true
       hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
         storage_engine: innodb
         globally_quoted_identifiers: true
 
