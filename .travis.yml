@@ -24,10 +24,10 @@ deploy:
       secret_access_key: $AWS_SECRET_KEY
       bucket: aws-spring-boot-jojoldu-book-build
       region: ap-northeast-2
-      skip_cleanup: true
       acl: private
       local_dir: deploy
-      wait-until-deployed: true
+      on:
+        branch: main
 
 notifications:
   email:
