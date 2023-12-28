@@ -9,9 +9,9 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> Check pid of current application"
 
-CURRENT_PID=$(pgrep -fl aws-spring-boot-jojoldu-book | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl aws-spring-boot-jojoldu-book | grep java | awk '{print $1}')
 
-echo "Pid of current application: $CURRENT_PID"
+echo "> Pid of current application: $CURRENT_PID"
 
 if [ -z "$CURRENT_PID" ]; then
 	echo "> No current application"
