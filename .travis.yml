@@ -38,6 +38,8 @@ deploy:
       application: aws-spring-boot-jojoldu-book
       deployment_group: aws-spring-boot-jojoldu-book-group
       region: ap-northeast-2
+      on:
+        branch: main
 
 notifications:
   email:
